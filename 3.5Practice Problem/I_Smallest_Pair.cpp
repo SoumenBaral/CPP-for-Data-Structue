@@ -10,15 +10,23 @@ int main ()
         int n;
         cin>>n;
         int ar[n];
+        int min = INT_MAX;
         for (int  j = 0; j < n; j++)
         {
             cin>>ar[j];
         }
         for (int  j = 0; j < n; j++)
         {
-            cout<<ar[j]<<" ";
+            for(int k=j+1 ; k<n;k++)
+            {
+                int sum = ar[j]+ar[k]+k-j;
+                if(min>sum)
+                {
+                    min=sum;
+                }
+            }
         }
-        cout<<endl;
+        cout<<min<<endl;
     }
      
     return 0;
